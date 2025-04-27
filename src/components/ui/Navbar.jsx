@@ -56,12 +56,30 @@ const Navbar = ({
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           
-          {/* Logo - Fixed width */}
-          <div className="flex-shrink-0 font-bold text-xl w-40">
+          {/* Mobile menu button - Only visible on small screens, now at the start */}
+          <div className="flex md:hidden items-center">
+            <button
+              className="inline-flex items-center justify-center p-2 rounded-md text-white transition duration-200"
+              style={{ backgroundColor: isOpen ? hoverColor : 'transparent' }}
+              onClick={toggleMenu}
+              aria-expanded={isOpen}
+            >
+              <span className="sr-only">{isOpen ? 'Close menu' : 'Open menu'}</span>
+              {isOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
+            </button>
+          </div>
+          
+          {/* Logo - Desktop version */}
+          <div className="hidden md:block flex-shrink-0 font-bold text-xl">
             <Link to="/" className="hover:text-gray-200 transition-colors duration-200">{title}</Link>
           </div>
 
-          {/* Desktop Menu - Using fixed width for nav items */}
+          {/* Logo - Mobile version (placed at the end) */}
+          <div className="md:hidden flex-shrink-0 font-bold text-xl">
+            <Link to="/" className="hover:text-gray-200 transition-colors duration-200">{title}</Link>
+          </div>
+
+          {/* Desktop Menu - Only visible on medium screens and up */}
           <div className="hidden md:flex md:items-center md:justify-center flex-1">
             <div className="flex justify-center space-x-[4px]">
               {navItems.map((item) => (
@@ -86,26 +104,13 @@ const Navbar = ({
             </div>
           </div>
 
-          {/* Login Button - Fixed width */}
-          <div className="hidden md:flex md:items-center w-40 justify-end">
+          {/* Login Button - Only visible on medium screens and up */}
+          <div className="hidden md:flex md:items-center justify-end">
             {showLogin && (
               <div className="ml-6">
                   <InlineIcons />
               </div>
             )}
-          </div>
-
-          {/* Mobile menu button */}
-          <div className="md:hidden flex items-center">
-            <button
-              className="inline-flex items-center justify-center p-2 rounded-md text-white transition duration-200"
-              style={{ backgroundColor: isOpen ? hoverColor : 'transparent' }}
-              onClick={toggleMenu}
-              aria-expanded={isOpen}
-            >
-              <span className="sr-only">{isOpen ? 'Close menu' : 'Open menu'}</span>
-              {isOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
-            </button>
           </div>
         </div>
       </div>
@@ -125,14 +130,19 @@ const Navbar = ({
             </Link>
           ))}
           {showLogin && (
-            <Link 
-              to={loginPath}
-              className="flex w-full items-center px-3 py-2 rounded-md bg-[#a4133c] text-white hover:bg-[#c9184a] transition-colors duration-200"
-              onClick={() => setIsOpen(false)}
-            >
-              <FaSignInAlt className="mr-2" />
-              Login
-            </Link>
+            <>
+              <div className="flex justify-center my-2">
+                <InlineIcons />
+              </div>
+              <Link 
+                to={loginPath}
+                className="flex w-full items-center px-3 py-2 rounded-md bg-[#a4133c] text-white hover:bg-[#c9184a] transition-colors duration-200"
+                onClick={() => setIsOpen(false)}
+              >
+                <FaSignInAlt className="mr-2" />
+                Login
+              </Link>
+            </>
           )}
         </div>
       </div>
