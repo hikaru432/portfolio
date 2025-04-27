@@ -1,6 +1,6 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
-import Navbar from '../ui/navbar';
+import Navbar from '../ui/Navbar';
 import Footer from '../section/Footer';
 
 const NavbarLayout = () => {
@@ -28,4 +28,4 @@ const NavbarLayout = () => {
   );
 };
 
-export default NavbarLayout; 
+export default NavbarLayout;
