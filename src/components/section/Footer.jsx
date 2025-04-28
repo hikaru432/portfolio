@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaFacebookF, FaTwitter, FaGoogle, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
+import { FaFacebookF, FaTwitter, FaGithub, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 
 const Footer = () => {
@@ -79,7 +79,7 @@ const Footer = () => {
         >
           {/* Social Icons with hover animations */}
           <motion.a 
-            href="#" 
+            href="https://web.facebook.com/jhon.rexey/" 
             className="bg-gray-700 rounded-full p-2 text-white transition-colors"
             variants={socialIconVariants}
             whileHover="hover"
@@ -87,7 +87,7 @@ const Footer = () => {
             <FaFacebookF size={16} />
           </motion.a>
           <motion.a 
-            href="#" 
+            href="https://web.facebook.com/jhon.rexey/" 
             className="bg-gray-700 rounded-full p-2 text-white transition-colors"
             variants={socialIconVariants}
             whileHover="hover"
@@ -95,15 +95,15 @@ const Footer = () => {
             <FaTwitter size={16} />
           </motion.a>
           <motion.a 
-            href="#" 
+            href="https://discord.com/users/hikaru3495" 
             className="bg-gray-700 rounded-full p-2 text-white transition-colors"
             variants={socialIconVariants}
             whileHover="hover"
           >
-            <FaGoogle size={16} />
+            <FaGithub size={16} />
           </motion.a>
           <motion.a 
-            href="#" 
+            href="https://www.instagram.com/jhon_rexey/" 
             className="bg-gray-700 rounded-full p-2 text-white transition-colors"
             variants={socialIconVariants}
             whileHover="hover"
@@ -111,7 +111,7 @@ const Footer = () => {
             <FaInstagram size={16} />
           </motion.a>
           <motion.a 
-            href="#" 
+            href="https://www.linkedin.com/in/jhon-rexey-cabera-a2b8a22ba/" 
             className="bg-gray-700 rounded-full p-2 text-white transition-colors"
             variants={socialIconVariants}
             whileHover="hover"
@@ -127,7 +127,7 @@ const Footer = () => {
           animate={{ opacity: 1 }}
           transition={{ delay: 1.5, duration: 0.8 }}
         >
-          © {new Date().getFullYear()} Clever Developer. All rights reserved.
+          © {new Date().getFullYear()} Hikaru Developer. All rights reserved.
         </motion.div>
       </motion.div>
     </motion.section>

@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import Button from '../ui/Button';
 import Robot from '../animation/Robot';
-import { Link } from 'react-router-dom';
 import GradientBackground from '../ui/GradientBackground';
 import { motion } from 'framer-motion';
 
